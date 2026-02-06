@@ -50,14 +50,18 @@ Label:
                 if self.home.busca.strip().lower() not in item["titulo"].lower():
                     continue
 
+                # ESCAPANDO O TEXTO COM json.dumps()
+                titulo = json.dumps(item['titulo'])
+                codigo = json.dumps(item['codigo'])
+
                 btn = Builder.load_string(
                     f"""
 Button:
-    text: "{item['titulo']}"
+    text: {titulo}
     size_hint_y: None
     height: "45dp"
     on_release:
-        app.open_code('{item['titulo']}', '''{item['codigo']}''')
+        app.open_code({titulo}, {codigo})
 """
                 )
                 grid.add_widget(btn)
