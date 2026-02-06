@@ -1,0 +1,62 @@
+Manager:
+    HomeScreen:
+    CodeScreen:
+
+<HomeScreen>:
+    name: "home"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        TextInput:
+            id: search
+            size_hint_y: None
+            height: "40dp"
+            hint_text: "Buscar..."
+            on_text:
+                root.busca = self.text
+                app.load_buttons()
+
+        ScrollView:
+            GridLayout:
+                id: grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
+
+<CodeScreen>:
+    name: "code"
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: root.titulo
+            size_hint_y: None
+            height: "40dp"
+            bold: True
+
+        ScrollView:
+            Label:
+                text: root.codigo
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+
+        BoxLayout:
+            size_hint_y: None
+            height: "50dp"
+            spacing: 10
+
+            Button:
+                text: "Copiar"
+                on_release:
+                    Clipboard.copy(root.codigo)
+
+            Button:
+                text: "Voltar"
+                on_release:
+                    app.root.current = "home"
