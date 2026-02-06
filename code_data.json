@@ -1,0 +1,102 @@
+{
+  "categorias": [
+    {
+      "nome": "Kivy",
+      "items": [
+        {
+          "titulo": "Botão simples",
+          "codigo": "Button(text='Clique aqui')"
+        },
+        {
+          "titulo": "Label simples",
+          "codigo": "Label(text='Olá')"
+        },
+        {
+          "titulo": "Layout vertical",
+          "codigo": "BoxLayout(orientation='vertical')"
+        },
+        {
+          "titulo": "Layout horizontal",
+          "codigo": "BoxLayout(orientation='horizontal')"
+        }
+      ]
+    },
+    {
+      "nome": "Python",
+      "items": [
+        {
+          "titulo": "Lista",
+          "codigo": "lista = [1, 2, 3]\nprint(lista)"
+        },
+        {
+          "titulo": "Dicionário",
+          "codigo": "d = {'nome': 'Jack'}\nprint(d['nome'])"
+        },
+        {
+          "titulo": "Laço for",
+          "codigo": "for i in range(5):\n    print(i)"
+        },
+        {
+          "titulo": "Função",
+          "codigo": "def soma(a, b):\n    return a + b"
+        }
+      ]
+    },
+    {
+      "nome": "Internet",
+      "items": [
+        {
+          "titulo": "GET com requests",
+          "codigo": "import requests\nr = requests.get('https://example.com')\nprint(r.text)"
+        },
+        {
+          "titulo": "POST com requests",
+          "codigo": "import requests\nr = requests.post('https://httpbin.org/post', data={'x':1})\nprint(r.json())"
+        }
+      ]
+    },
+    {
+      "nome": "JSON",
+      "items": [
+        {
+          "titulo": "Salvar JSON",
+          "codigo": "import json\njson.dump(obj, open('file.json','w'))"
+        },
+        {
+          "titulo": "Ler JSON",
+          "codigo": "import json\nobj = json.load(open('file.json','r'))"
+        }
+      ]
+    },
+    {
+      "nome": "Plyer",
+      "items": [
+        {
+          "titulo": "Copiar para clipboard",
+          "codigo": "from kivy.core.clipboard import Clipboard\nClipboard.copy('texto')"
+        },
+        {
+          "titulo": "Vibrar (Android)",
+          "codigo": "from plyer import vibrator\nvibrator.vibrate(0.5)"
+        },
+        {
+          "titulo": "Mostrar notificação",
+          "codigo": "from plyer import notification\nnotification.notify(title='Olá', message='Teste')"
+        }
+      ]
+    },
+    {
+      "nome": "Banco",
+      "items": [
+        {
+          "titulo": "SQLite: criar tabela",
+          "codigo": "import sqlite3\nc = sqlite3.connect('db.db')\nc.execute('CREATE TABLE IF NOT EXISTS t(id INTEGER)')\nc.commit()"
+        },
+        {
+          "titulo": "SQLite: inserir",
+          "codigo": "import sqlite3\nc = sqlite3.connect('db.db')\nc.execute('INSERT INTO t VALUES (1)')\nc.commit()"
+        }
+      ]
+    }
+  ]
+}
