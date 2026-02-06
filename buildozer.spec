@@ -14,11 +14,11 @@ orientation = portrait
 
 android.archs = arm64-v8a
 android.minapi = 29
-android.api = 29
+android.api = 31
 android.ndk = 25b
 android.accept_sdk_license = True
 
-android.permissions = INTERNET, CAMERA
+android.permissions = INTERNET
 
 [presplash]
 presplash.color = 000000
