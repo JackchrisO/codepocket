@@ -1,22 +1,26 @@
-Manager:
+#:kivy 2.1.0
+
+<Manager>:
     HomeScreen:
+        name: "home"
     CodeScreen:
+        name: "code"
 
 <HomeScreen>:
-    name: "home"
     BoxLayout:
         orientation: "vertical"
-        padding: 10
-        spacing: 10
 
-        TextInput:
-            id: search
+        BoxLayout:
             size_hint_y: None
-            height: "40dp"
-            hint_text: "Buscar..."
-            on_text:
-                root.busca = self.text
-                app.load_buttons()
+            height: "60dp"
+            padding: "10dp"
+            spacing: "10dp"
+
+            TextInput:
+                id: busca
+                hint_text: "Pesquisar..."
+                multiline: False
+                on_text: root.busca = self.text; app.load_buttons()
 
         ScrollView:
             GridLayout:
@@ -24,39 +28,34 @@ Manager:
                 cols: 1
                 size_hint_y: None
                 height: self.minimum_height
-                spacing: 10
+                padding: "10dp"
+                spacing: "10dp"
 
 <CodeScreen>:
-    name: "code"
     BoxLayout:
         orientation: "vertical"
-        padding: 10
-        spacing: 10
+        padding: "10dp"
+        spacing: "10dp"
 
-        Label:
-            text: root.titulo
+        BoxLayout:
             size_hint_y: None
-            height: "40dp"
-            bold: True
+            height: "60dp"
+            spacing: "10dp"
+
+            Button:
+                text: "Voltar"
+                on_release: app.sm.current = "home"
+
+            Label:
+                text: root.titulo
+                bold: True
+                halign: "center"
+                valign: "middle"
+                text_size: self.size
 
         ScrollView:
             Label:
                 text: root.codigo
-                text_size: self.width, None
                 size_hint_y: None
                 height: self.texture_size[1]
-
-        BoxLayout:
-            size_hint_y: None
-            height: "50dp"
-            spacing: 10
-
-            Button:
-                text: "Copiar"
-                on_release:
-                    Clipboard.copy(root.codigo)
-
-            Button:
-                text: "Voltar"
-                on_release:
-                    app.root.current = "home"
+                text_size: self.width, None
