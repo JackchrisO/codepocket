@@ -20,7 +20,9 @@
                 id: busca
                 hint_text: "Pesquisar..."
                 multiline: False
-                on_text: root.busca = self.text; app.load_buttons()
+                on_text:
+                    root.busca = self.text
+                    app.load_buttons()
 
         ScrollView:
             GridLayout:
@@ -47,8 +49,8 @@
                 on_release: app.sm.current = "home"
 
             Label:
-                text: root.titulo
-                bold: True
+                text: "[b]" + root.titulo + "[/b]"
+                markup: True
                 halign: "center"
                 valign: "middle"
                 text_size: self.size
@@ -59,3 +61,6 @@
                 size_hint_y: None
                 height: self.texture_size[1]
                 text_size: self.width, None
+
+# ⚠️ ESSENCIAL
+Manager:
