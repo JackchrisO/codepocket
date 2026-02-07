@@ -8,7 +8,7 @@ source.include_exts = py,kv,json
 
 version = 0.1
 
-requirements = python3,kivy,requests,plyer
+requirements = python3,kivy==2.1.0
 
 orientation = portrait
 
